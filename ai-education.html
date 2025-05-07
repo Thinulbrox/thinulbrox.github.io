@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI in Education: Transforming Learning in 2025 - How artificial intelligence is reshaping the educational landscape" />
+  <title>AI in Education: Transforming Learning in 2025</title>
+  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+  <link rel="shortcut icon" href="favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="favicon/web-app-manifest-512x512.png" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5626509956645694" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+    :root {
+      --primary: #1a1a2e;
+      --secondary: #2e2e3b;
+      --accent: #ff5e62;
+      --accent-alt: #00d4ff;
+      --text: #ffffff;
+      --text-muted: #d1d5db;
+      --gradient: linear-gradient(45deg, #ff5e62, #00d4ff);
+      --light-primary: #f9fafb;
+      --light-secondary: #e5e7eb;
+      --light-accent: #f43f5e;
+      --light-accent-alt: #06b6d4;
+      --light-text: #1f2937;
+      --light-text-muted: #0c3304;
+      --light-gradient: linear-gradient(45deg, #f43f5e, #06b6d4);
+      --transparent-bg: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--primary);
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      animation: zoomInOut 40s ease-in-out infinite;
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+
+    body.light-mode {
+      background: var(--light-primary);
+      color: var(--light-text);
+    }
+
+    header {
+      background-color: transparent;
+      padding: 1.5rem 2rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: background 0.5s ease;
+    }
+
+    header.scrolled {
+      background-color: rgba(46, 46, 59, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    body.light-mode header {
+      background-color: transparent;
+    }
+
+    body.light-mode header.scrolled {
+      background-color: rgba(229, 231, 235, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s ease, color 0.5s ease;
+    }
+
+    body.light-mode .logo {
+      color: var(--light-accent);
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    .logo i {
+      color: var(--accent-alt);
+      margin-right: 0.5rem;
+      transition: color 0.5s ease;
+    }
+
+    body.light-mode .logo i {
+      color: var(--light-accent-alt);
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: color 0.5s ease, transform 0.3s ease;
+    }
+
+    body.light-mode nav a {
+      color: var(--light-text);
+    }
+
+    nav a:hover {
+      color: var(--accent-alt);
+      transform: translateY(-2px);
+    }
+
+    body.light-mode nav a:hover {
+      color: var(--light-accent-alt);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: 0;
+      left: 0;
+      background: var(--gradient);
+      transition: width 0.3s ease;
+    }
+
+    body.light-mode nav a::after {
+      background: var(--light-gradient);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.8rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, color 0.5s ease;
+    }
+
+    body.light-mode .mobile-menu-btn {
+      color: var(--light-text);
+    }
+
+    .mobile-menu-btn:hover {
+      transform: rotate(90deg);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, color 0.5s ease;
+    }
+
+    body.light-mode .theme-toggle {
+      color: var(--light-text);
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.2);
+    }
+
+    .hero {
+      background: var(--gradient), ;
+      background-size: cover;
+      background-position: center;
+      padding: 15rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.534);
+      z-index: 1;
+      transition: background 0.5s ease;
+    }
+
+    body.light-mode .hero::before {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+      position: relative;
+      z-index: 2;
+      animation: slideIn 1s ease-out;
+    }
+
+    body.light-mode .hero h1 {
+      color: var(--light-text);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: var(--text-muted);
+      position: relative;
+      z-index: 2;
+      animation: slideIn 1.2s ease-out;
+    }
+
+    body.light-mode .hero p {
+      color: var(--light-text-muted);
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      position: relative;
+      display: inline-block;
+      color: var(--accent);
+      animation: fadeIn 1s ease-out;
+    }
+
+    body.light-mode .section-title h2 {
+      color: var(--light-accent);
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      width: 80px;
+      height: 3px;
+      background: var(--gradient);
+      transform: translateX(-50%);
+    }
+
+    body.light-mode .section-title h2::after {
+      background: var(--light-gradient);
+    }
+
+    .ai-section {
+      background: var(--secondary);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    body.light-mode .ai-section {
+      background: var(--light-secondary);
+    }
+
+    .ai-section:hover {
+      transform: translateY(-5px);
+    }
+
+    .ai-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--accent-alt);
+      margin-bottom: 0.5rem;
+    }
+
+    body.light-mode .ai-section h3 {
+      color: var(--light-accent-alt);
+    }
+
+    .ai-section p, .ai-section ul {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    body.light-mode .ai-section p, body.light-mode .ai-section ul {
+      color: var(--light-text-muted);
+    }
+
+    .ai-section ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .ai-section strong {
+      color: var(--text);
+    }
+
+    body.light-mode .ai-section strong {
+      color: var(--light-text);
+    }
+
+    .ai-icon {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: var(--accent);
+      color: var(--text);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      margin-right: 1rem;
+      font-size: 1.2rem;
+    }
+
+    body.light-mode .ai-icon {
+      background: var(--light-accent);
+      color: white;
+    }
+
+    .ai-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .applications {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .applications {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .application {
+      background: var(--secondary);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    body.light-mode .application {
+      background: var(--light-secondary);
+    }
+
+    .application i {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    body.light-mode .application i {
+      color: var(--light-accent);
+    }
+
+    .application h4 {
+      margin-bottom: 0.5rem;
+      color: var(--accent-alt);
+    }
+
+    body.light-mode .application h4 {
+      color: var(--light-accent-alt);
+    }
+
+    .conclusion {
+      background: var(--transparent-bg);
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    body.light-mode .conclusion {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--text);
+    }
+
+    body.light-mode .btn-primary {
+      background: var(--light-accent);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-alt);
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    body.light-mode .btn-primary:hover {
+      background: var(--light-accent-alt);
+    }
+
+    footer {
+      background: var(--secondary);
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    body.light-mode footer {
+      background: var(--light-secondary);
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .footer-text {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    body.light-mode .footer-text {
+      color: var(--light-text-muted);
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: var(--text);
+      padding: 0.8rem 1rem;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 1.2rem;
+      display: none;
+      transition: all 0.3s ease;
+    }
+
+    body.light-mode .back-to-top {
+      background: var(--light-accent);
+      color: var(--light-text);
+    }
+
+    .back-to-top:hover {
+      background: var(--accent-alt);
+      transform: translateY(-5px);
+    }
+
+    body.light-mode .back-to-top:hover {
+      background: var(--light-accent-alt);
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes zoomInOut {
+      0%, 100% { background-position: center; }
+     50% { background-position: center 10%; }
+    } 
+
+    @media (max-width: 768px) {
+      .header-content {
+        height: 70px;
+      }
+
+      .logo {
+        font-size: 1.7rem;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--secondary);
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        transform: translateY(-100%);
+        transition: transform 0.5s ease;
+      }
+
+      body.light-mode nav {
+        background: var(--light-secondary);
+      }
+
+      nav.active {
+        display: flex;
+        transform: translateY(0);
+      }
+
+      nav a {
+        padding: 1rem 0;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body style="background-image: url('img/ai.png'); background-size: cover; background-attachment: fixed; background-position: center;"></body>
+  <amp-auto-ads type="adsense" data-ad-client="ca-pub-5626509956645694"></amp-auto-ads>
+  </amp-auto-ads>
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <i class="fas fa-microchip"></i>
+        Tech & Finance Insights
+      </div>
+      <div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <nav id="mainNav">
+        <a href="../index.html#tech">Tech Updates</a>
+        <a href="../index.html#finance">Finance Tips</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#privacy">Privacy</a>
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>AI in Education: Transforming Learning in 2025</h1>
+    <p>How artificial intelligence is reshaping the educational landscape and creating new opportunities for personalized learning.</p>
+  </section>
+
+  <section class="content">
+    <div class="section-title">
+      <h2>The AI Education Revolution</h2>
+    </div>
+    <p>Artificial intelligence has transformed numerous industries, but its impact on education may be among the most profound. In 2025, AI technologies are fundamentally changing how students learn, how teachers teach, and how educational institutions operate. Let's explore the key ways AI is revolutionizing education.</p>
+
+    <div class="ai-section">
+      <div class="ai-header">
+        <div class="ai-icon"><i class="fas fa-user-graduate"></i></div>
+        <h3>Personalized Learning at Scale</h3>
+      </div>
+      <p>One of the most significant contributions of AI to education is the ability to personalize learning experiences for each student:</p>
+      <ul>
+        <li><strong>Adaptive Learning Platforms:</strong> AI systems analyze student performance in real-time, adjusting difficulty levels and learning paths based on individual strengths and weaknesses</li>
+        <li><strong>Customized Content Delivery:</strong> Educational materials are presented in formats that match each student's learning style—visual, auditory, or kinesthetic</li>
+        <li><strong>Pace Optimization:</strong> Students can progress through material at their optimal speed, neither held back nor rushed ahead</li>
+        <li><strong>Knowledge Gap Identification:</strong> AI identifies specific concepts a student hasn't mastered and provides targeted remediation</li>
+      </ul>
+      <p>These personalized approaches have shown significant improvements in learning outcomes, with studies indicating 20-30% faster mastery of concepts compared to traditional one-size-fits-all instruction.</p>
+    </div>
+
+    <div class="ai-section">
+      <div class="ai-header">
+        <div class="ai-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+        <h3>AI as Teaching Assistant</h3>
+      </div>
+      <p>AI is augmenting teachers' capabilities, allowing them to focus on higher-value interactions with students:</p>
+      <ul>
+        <li><strong>Automated Grading:</strong> AI systems can evaluate not just multiple-choice questions but also essays, coding assignments, and even art projects</li>
+        <li><strong>Administrative Automation:</strong> Routine tasks like attendance tracking, scheduling, and documentation are handled by AI</li>
+        <li><strong>Teaching Insights:</strong> AI analyzes classroom data to provide teachers with insights about student engagement, comprehension patterns, and effective teaching strategies</li>
+        <li><strong>Content Creation:</strong> AI helps generate lesson plans, quizzes, and supplementary materials tailored to curriculum objectives</li>
+      </ul>
+      <p>Teachers report saving 6-10 hours per week on administrative tasks, allowing more time for direct student interaction and creative teaching approaches.</p>
+    </div>
+
+    <div class="ai-section">
+      <div class="ai-header">
+        <div class="ai-icon"><i class="fas fa-robot"></i></div>
+        <h3>Intelligent Tutoring Systems</h3>
+      </div>
+      <p>AI-powered tutoring systems provide personalized, on-demand support for students:</p>
+      <ul>
+        <li><strong>24/7 Learning Support:</strong> Students can get help whenever they need it, not just during school hours</li>
+        <li><strong>Conversational Interfaces:</strong> Natural language processing allows students to ask questions in their own words</li>
+        <li><strong>Step-by-Step Guidance:</strong> Systems can break down complex problems and guide students through solution processes</li>
+        <li><strong>Emotional Intelligence:</strong> Advanced systems can detect frustration or confusion and adjust their approach accordingly</li>
+      </ul>
+      <p>These AI tutors are particularly valuable for subjects like mathematics and science, where immediate feedback on problem-solving approaches is crucial for learning.</p>
+    </div>
+
+    <div class="section-title">
+      <h2>Real-World Applications</h2>
+    </div>
+
+    <div class="applications">
+      <div class="application">
+        <i class="fas fa-language"></i>
+        <h4>Language Learning</h4>
+        <p>AI-powered language apps create immersive experiences with real-time pronunciation feedback, personalized vocabulary building, and conversational practice with AI partners that adapt to the learner's proficiency level.</p>
+      </div>
+      <div class="application">
+        <i class="fas fa-universal-access"></i>
+        <h4>Accessibility</h4>
+        <p>AI tools provide real-time captioning, text-to-speech, and content simplification, making education more accessible to students with disabilities and different learning needs.</p>
+      </div>
+      <div class="application">
+        <i class="fas fa-vr-cardboard"></i>
+        <h4>Immersive Learning</h4>
+        <p>AI-enhanced virtual and augmented reality create interactive simulations for subjects like history, science, and medicine, allowing students to experience concepts rather than just read about them.</p>
+      </div>
+      <div class="application">
+        <i class="fas fa-graduation-cap"></i>
+        <h4>Higher Education</h4>
+        <p>AI systems help match students with appropriate courses and career paths based on their strengths, interests, and goals, while also identifying students at risk of dropping out.</p>
+      </div>
+      <div class="application">
+        <i class="fas fa-chart-line"></i>
+        <h4>Skills Assessment</h4>
+        <p>AI evaluates not just academic knowledge but also soft skills like critical thinking, creativity, and collaboration through analysis of project work and interactions.</p>
+      </div>
+      <div class="application">
+        <i class="fas fa-briefcase"></i>
+        <h4>Workforce Preparation</h4>
+        <p>AI-driven platforms connect educational content to real-world job requirements, helping students develop the specific skills most valued in their chosen fields.</p>
+      </div>
+    </div>
+
+    <div class="ai-section">
+      <div class="ai-header">
+        <div class="ai-icon"><i class="fas fa-exclamation-triangle"></i></div>
+        <h3>Challenges and Concerns</h3>
+      </div>
+      <p>Despite its promise, AI in education faces several important challenges:</p>
+      <ul>
+        <li><strong>Digital Divide:</strong> Access to AI-powered educational tools remains uneven, potentially widening achievement gaps between privileged and underserved communities</li>
+        <li><strong>Data Privacy:</strong> The collection of detailed learning data raises concerns about student privacy and data security</li>
+        <li><strong>Over-reliance on Technology:</strong> There's a risk of diminishing human connection in education if AI tools are implemented without thoughtful integration</li>
+        <li><strong>Algorithm Bias:</strong> AI systems may perpetuate existing biases if not carefully designed and monitored</li>
+        <li><strong>Teacher Adaptation:</strong> Many educators require significant professional development to effectively incorporate AI tools into their teaching</li>
+      </ul>
+      <p>Addressing these challenges requires collaboration between educators, technologists, policymakers, and ethicists to ensure AI enhances rather than undermines educational equity and quality.</p>
+    </div>
+
+    <div class="conclusion">
+      <h2>The Future of Learning</h2>
+      <p>AI is not replacing teachers or traditional educational approaches, but rather augmenting them in powerful ways. The most effective educational models in 2025 combine the analytical power and scalability of AI with the emotional intelligence, creativity, and ethical guidance that human educators provide. As AI continues to evolve, we can expect even more sophisticated applications that help unlock each student's full potential while preparing them for a world where AI literacy is as fundamental as reading and writing. The goal remains what it has always been: to foster curious, critical, and creative thinkers ready to tackle the challenges of tomorrow.</p>
+      <a href="quantum-computing.html" class="btn btn-primary">Explore Quantum Computing</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p class="footer-text">© 2025 Tech & Finance Insights | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+  <script>
+    // Mobile Menu Toggle
+    document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+      const nav = document.getElementById('mainNav');
+      nav.classList.toggle('active');
+      const icon = this.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+
+    // Theme Toggle
+    document.getElementById('themeToggle').addEventListener('click', function() {
+      document.body.classList.toggle('light-mode');
+      const icon = this.querySelector('i');
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+    });
+
+    // Scroll-based header background and back-to-top visibility
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      const backToTop = document.getElementById('backToTop');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+        backToTop.style.display = 'block';
+      } else {
+        header.classList.remove('scrolled');
+        backToTop.style.display = 'none';
+      }
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          document.getElementById('mainNav').classList.remove('active');
+          const mobileMenuIcon = document.getElementById('mobileMenuBtn').querySelector('i');
+          mobileMenuIcon.classList.replace('fa-times', 'fa-bars');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
