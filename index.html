@@ -3,39 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tech and Finance Blog - Tips, Reviews, and Updates">
+  <meta name="description" content="Tech & Finance Insights - Global Perspectives, Tips, and Updates">
   <title>Tech & Finance Insights</title>
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
   <link rel="shortcut icon" href="favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
   <link rel="manifest" href="favicon/web-app-manifest-512x512.png" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5626509956645694"
-     crossorigin="anonymous"></script>
-     <script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5626509956645694" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
   <style>
-    
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap');
 
     :root {
-      --primary: #0a0a23;
-      --secondary: #1c2526e0;
-      --accent: #ff6f61;
-      --accent-alt: #40c4ff;
+      --primary: #1a1a2e;
+      --secondary: #2e2e3b;
+      --accent: #ff5e62;
+      --accent-alt: #00d4ff;
       --text: #ffffff;
-      --text-muted: #c5c5b0;
-      --gradient: linear-gradient(45deg, #b43d32, #179ad6);
-      --light-primary: #e9ecef;
-      --light-secondary: #f8f9fa;
-      --light-accent: #e63946;
-      --light-accent-alt: #1d9bf0;
-      --light-text: #212529;
-      --light-text-muted: #6c757d;
-      --light-gradient: linear-gradient(45deg, #61161c, #075991);
+      --text-muted: #d1d5db;
+      --gradient: linear-gradient(45deg, #ff5e62, #00d4ff);
+      --light-primary: #f9fafb;
+      --light-secondary: #e5e7eb;
+      --light-accent: #f43f5e;
+      --light-accent-alt: #06b6d4;
+      --light-text: #1f2937;
+      --light-text-muted: #0c3304;
+      --light-gradient: linear-gradient(45deg, #f43f5e, #06b6d4);
+      --transparent-bg: rgba(255, 255, 255, 0.1);
     }
 
     * {
@@ -46,7 +42,11 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background: var(--primary);
+      background: var(--primary) url('img/root bg.png');
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      animation: zoomInOut 40s ease-in-out infinite;
       color: var(--text);
       line-height: 1.8;
       overflow-x: hidden;
@@ -54,59 +54,44 @@
     }
 
     body.light-mode {
-      background: var(--light-primary);
+      background: var(--light-primary)url('img/root bg.png');
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
       color: var(--light-text);
-    }
-
-  body.light-mode .header-content,
-  body.light-mode .card,
-  body.light-mode .about-section,
-  body.light-mode .privacy-section,
-  body.light-mode footer 
-    body.light-mode .hero::before {
-      background: transparent;
-    }
-
-    body.light-mode .subscribe-section {
-      background: var(--light-gradient);
-    }
-
-    body.light-mode .card p,
-    body.light-mode .about-content p,
-    body.light-mode .privacy-content p,
-    body.light-mode .privacy-content ul,
-    body.light-mode .subscribe-section p,
-    body.light-mode .footer-text {
-      color: var(--light-text-muted);
     }
 
     header {
       background: transparent;
-      padding: 1rem 2rem;
-      position: absolute;
-      top: 0;
-      bottom: 200px;
+      padding: 1.5rem 2rem;
+      position: fixed;
+      top: px;
       width: 100%;
       z-index: 1000;
       transition: background 0.5s ease;
     }
 
     header.scrolled {
-      background: var(--secondary);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      background: rgba(46, 46, 59, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    body.light-mode header {
+      background: transparent;
     }
 
     body.light-mode header.scrolled {
-      background: var(--light-secondary);
+      background: rgba(229, 231, 235, 0.95);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .header-content {
-      max-width: 1300px;
+      max-width: 1700px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      height: 60px;
     }
 
     .logo {
@@ -139,7 +124,7 @@
 
     nav {
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
       align-items: center;
     }
 
@@ -191,7 +176,6 @@
       border: none;
       color: var(--text);
       font-size: 1.8rem;
-      position: absolute;
       cursor: pointer;
       transition: transform 0.3s ease, color 0.5s ease;
     }
@@ -222,10 +206,10 @@
     }
 
     .hero {
-      background: var(--gradient), url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=2070&auto=format&fit=crop');
+      background: var(--gradient),;
       background-size: cover;
       background-position: center;
-      padding: 8rem 2rem;
+      padding: 11.5rem 2rem;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -238,14 +222,18 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.534);
       z-index: 1;
       transition: background 0.5s ease;
     }
 
+    body.light-mode .hero::before {
+      background: rgba(255, 255, 255, 0.425);
+    }
+
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 4rem;
+      font-size: 3.5rem;
       margin-bottom: 1.5rem;
       color: var(--text);
       position: relative;
@@ -253,14 +241,22 @@
       animation: slideIn 1s ease-out;
     }
 
+    body.light-mode .hero h1 {
+      color: var(--light-text);
+    }
+
     .hero p {
-      font-size: 1.3rem;
-      max-width: 900px;
+      font-size: 1.2rem;
+      max-width: 800px;
       margin: 0 auto 2rem;
       color: var(--text-muted);
       position: relative;
       z-index: 2;
       animation: slideIn 1.2s ease-out;
+    }
+
+    body.light-mode .hero p {
+      color: var(--light-text-muted);
     }
 
     .hero-buttons {
@@ -323,7 +319,7 @@
     }
 
     .content {
-      max-width: 1300px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 5rem 2rem;
     }
@@ -335,7 +331,7 @@
 
     .section-title h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       position: relative;
       display: inline-block;
       color: var(--accent);
@@ -363,13 +359,13 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
 
     .card {
       background: var(--secondary);
-      border-radius: 20px;
+      border-radius: 15px;
       overflow: hidden;
       transition: all 0.3s ease;
       position: relative;
@@ -377,9 +373,13 @@
       animation: cardSlideIn 0.5s ease-out;
     }
 
+    body.light-mode .card {
+      background: var(--light-secondary);
+    }
+
     .card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     }
 
     .card::before {
@@ -388,7 +388,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 6px;
+      height: 5px;
       background: var(--gradient);
     }
 
@@ -396,13 +396,20 @@
       background: var(--light-gradient);
     }
 
+    .card-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
     .card-content {
-      padding: 2rem;
+      padding: 1.5rem;
     }
 
     .card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       margin-bottom: 1rem;
       color: var(--accent-alt);
     }
@@ -414,13 +421,18 @@
     .card p {
       color: var(--text-muted);
       margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    body.light-mode .card p {
+      color: var(--light-text-muted);
     }
 
     .card-footer {
-      display: flex;
+      display: flex26px;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      padding: 1rem 1.5rem;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -434,15 +446,15 @@
     }
 
     .tag {
-      background: rgba(64, 196, 255, 0.1);
+      background: var(--transparent-bg);
       color: var(--accent-alt);
       padding: 0.3rem 0.8rem;
       border-radius: 20px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     body.light-mode .tag {
-      background: rgba(29, 155, 240, 0.1);
+      background: rgba(0, 0, 0, 0.1);
       color: var(--light-accent-alt);
     }
 
@@ -450,7 +462,7 @@
       color: var(--accent);
       text-decoration: none;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.9rem;
       display: flex;
       align-items: center;
       gap: 0.3rem;
@@ -476,8 +488,12 @@
       margin: 5rem 0;
     }
 
+    body.light-mode .about-section {
+      background: var(--light-secondary);
+    }
+
     .about-container {
-      max-width: 1300px;
+      max-width: 1400px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -486,7 +502,7 @@
     }
 
     .about-image {
-      border-radius: 20px;
+      border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     }
@@ -503,7 +519,7 @@
 
     .about-content h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       margin-bottom: 1.5rem;
       color: var(--accent);
     }
@@ -514,17 +530,37 @@
 
     .about-content p {
       color: var(--text-muted);
-      font-size: 1.1rem;
+      font-size: 1rem;
+    }
+
+    body.light-mode .about-content p {
+      color: var(--light-text-muted);
     }
 
     .subscribe-section {
       background: var(--gradient);
       padding: 5rem 2rem;
       text-align: center;
-      border-radius: 20px;
-      max-width: 1300px;
+      border-radius: 15px;
+      width: fit-content;
       margin: 5rem auto;
       position: relative;
+    }
+
+    .subscribe-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      z-index: 1;
+    }
+
+    body.light-mode .subscribe-section::before {
+      background: rgba(255, 255, 255, 0.2);
     }
 
     .subscribe-content {
@@ -534,17 +570,25 @@
 
     .subscribe-section h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       margin-bottom: 1.5rem;
       color: var(--text);
       animation: slideIn 1s ease-out;
+    }
+
+    body.light-mode .subscribe-section h2 {
+      color: var(--light-text);
     }
 
     .subscribe-section p {
       max-width: 700px;
       margin: 0 auto 2rem;
       color: var(--text-muted);
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+    }
+
+    body.light-mode .subscribe-section p {
+      color: var(--light-text-muted);
     }
 
     .subscribe-form {
@@ -556,12 +600,12 @@
 
     .subscribe-form input {
       width: 100%;
-      padding: 1.2rem 1.5rem;
+      padding: 1rem 1.5rem;
       border-radius: 30px;
       border: none;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       color: var(--primary);
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
     body.light-mode .subscribe-form input {
@@ -631,6 +675,10 @@
       margin: 5rem 0;
     }
 
+    body.light-mode .privacy-section {
+      background: var(--light-secondary);
+    }
+
     .privacy-container {
       max-width: 1000px;
       margin: 0 auto;
@@ -638,7 +686,7 @@
 
     .privacy-container h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       margin-bottom: 2rem;
       color: var(--accent);
       text-align: center;
@@ -650,9 +698,9 @@
     }
 
     .privacy-content {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 2.5rem;
-      border-radius: 20px;
+      background: var(--transparent-bg);
+      padding: 2rem;
+      border-radius: 15px;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
@@ -664,7 +712,7 @@
       color: var(--accent-alt);
       margin-bottom: 1rem;
       margin-top: 2rem;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
 
     body.light-mode .privacy-content h3 {
@@ -674,7 +722,11 @@
     .privacy-content p {
       color: var(--text-muted);
       margin-bottom: 1rem;
-      font-size: 1.1rem;
+      font-size: 1rem;
+    }
+
+    body.light-mode .privacy-content p {
+      color: var(--light-text-muted);
     }
 
     .privacy-content ul {
@@ -683,8 +735,8 @@
       margin-bottom: 1rem;
     }
 
-    .privacy-content li {
-      margin-bottom: 0.5rem;
+    body.light-mode .privacy-content ul {
+      color: var(--light-text-muted);
     }
 
     footer {
@@ -696,53 +748,89 @@
 
     body.light-mode footer {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
+      background: var(--light-secondary);
     }
 
     .footer-content {
-      max-width: 1300px;
+      max-width: 1400px;
       margin: 0 auto;
     }
 
     .footer-text {
       color: var(--text-muted);
-      font-size: 1rem;
+      font-size: 0.9rem;
+    }
+
+    body.light-mode .footer-text {
+      color: var(--light-text-muted);
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: var(--text);
+      padding: 0.8rem 1rem;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 1.2rem;
+      display: none;
+      transition: all 0.3s ease;
+    }
+
+    body.light-mode .back-to-top {
+      background: var(--light-accent);
+      color: var(--light-text);
+    }
+
+    .back-to-top:hover {
+      background: var(--accent-alt);
+      transform: translateY(-5px);
+    }
+
+    body.light-mode .back-to-top:hover {
+      background: var(--light-accent-alt);
     }
 
     @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomInOut {
+      0%, 100% { background-position: center; }
+     50% { background-position: center 10%; }
+    } 
+
+    @keyframes backgroundMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+
+    @keyframes moveInOut {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(10px); }
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     @keyframes cardSlideIn {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
       .header-content {
-        flex-direction: row;
-        justify-content: space-between;
+        height: 70px;
+      }
+
+      .logo {
+        font-size: 1.7rem;
       }
 
       nav {
@@ -754,7 +842,7 @@
       }
 
       .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
       }
 
       .about-container {
@@ -774,14 +862,10 @@
     }
 
     @media (max-width: 480px) {
-      .mobile-menu-btn {
-        display: block;
-      }
-
       nav {
         display: none;
         position: fixed;
-        top: 145px;
+        top: 70px;
         left: 0;
         width: 100%;
         background: var(--secondary);
@@ -810,9 +894,7 @@
   </style>
 </head>
 <body>
-  <amp-auto-ads type="adsense"
-        data-ad-client="ca-pub-5626509956645694">
-  </amp-auto-ads>
+  <amp-auto-ads type="adsense" data-ad-client="ca-pub-5626509956645694"></amp-auto-ads>
   <header>
     <div class="header-content">
       <div class="logo">
@@ -828,6 +910,7 @@
         <a href="#tech">Tech Updates</a>
         <a href="#finance">Finance Tips</a>
         <a href="#about">About</a>
+        <a href="#privacy">Privacy</a>
         <button class="theme-toggle" id="themeToggle">
           <i class="fas fa-moon"></i>
         </button>
@@ -836,8 +919,8 @@
   </header>
 
   <section class="hero">
-    <h1>Cutting-Edge Tech & Finance Insights</h1>
-    <p>Stay ahead with the latest technological innovations and financial strategies to maximize your potential in 2025 and beyond.</p>
+    <h1>Global Tech & Finance Insights</h1>
+    <p>Discover cutting-edge technology trends and financial strategies to thrive in 2025 and beyond, curated for a global audience.</p>
     <div class="hero-buttons">
       <a href="#tech" class="btn btn-primary">Explore Tech</a>
       <a href="#finance" class="btn btn-secondary">Finance Tips</a>
@@ -850,41 +933,72 @@
     </div>
     <div class="cards">
       <div class="card">
+        <img src="img/300usd.jpg" alt="Smartphones" class="card-image">
         <div class="card-content">
-          <h3>Top 5 Phones Under $300 in 2025</h3>
-          <p>Looking for a great phone that doesn't break the bank? Discover powerful smartphones under $300 that offer impressive features, fast performance, and great design.</p>
+          <h3>Top 5 Smartphones Under $300 in 2025</h3>
+          <p>Explore budget-friendly smartphones offering premium features, from 5G connectivity to stunning displays, perfect for global tech enthusiasts.</p>
           <div class="card-footer">
             <div class="card-tags">
               <span class="tag">Budget</span>
               <span class="tag">Smartphones</span>
             </div>
-            <a href="tech & finance insights/top5.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            <a href="blogs/top5-smartphones.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
       <div class="card">
+        <img src="img/ai tools.jpeg" alt="AI Tools" class="card-image">
         <div class="card-content">
-          <h3>AI Tools Every Student Should Know</h3>
-          <p>Artificial Intelligence is reshaping education. From writing essays to organizing schedules, students in 2025 have powerful tools at their fingertips.</p>
+          <h3>AI Tools Revolutionizing Education in 2025</h3>
+          <p>From automated essay grading to personalized learning platforms, discover AI tools empowering students worldwide.</p>
           <div class="card-footer">
             <div class="card-tags">
               <span class="tag">AI</span>
               <span class="tag">Education</span>
             </div>
-            <a href="tech & finance insights/ai.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            <a href="blogs/ai-education.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
       <div class="card">
+        <img src="img/refurbish.jpg" alt="Refurbished Laptops" class="card-image">
         <div class="card-content">
-          <h3>Should You Buy a Refurbished Laptop?</h3>
-          <p>Buying a refurbished laptop can save you serious money, but is it worth the risk? Learn about the pros and cons before making your decision.</p>
+          <h3>Refurbished Laptops: Worth the Investment?</h3>
+          <p>Learn the benefits and risks of buying refurbished laptops, a cost-effective option for professionals and students globally.</p>
           <div class="card-footer">
             <div class="card-tags">
               <span class="tag">Hardware</span>
               <span class="tag">Budget</span>
             </div>
-            <a href="tech & finance insights/refurbish.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            <a href="blogs/refurbished-laptops.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/qt com.jpg" alt="Quantum Computing" class="card-image">
+        <div class="card-content">
+          <h3>Quantum Computing Breakthroughs in 2025</h3>
+          <p>Explore how quantum computing is reshaping industries, from cryptography to drug discovery, with global implications.</p>
+          <div class="card-footer">
+            <div class="card-tags">
+              <span class="tag">Quantum</span>
+              <span class="tag">Innovation</span>
+            </div>
+            <a href="blogs/quantum-computing.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/cy.jpg" alt="Cybersecurity" class="card-image">
+        <div class="card-content">
+          <h3>Cybersecurity Trends to Watch in 2025</h3>
+          <p>Stay ahead of cyber threats with insights into AI-driven security, zero-trust models, and global privacy regulations.</p>
+          <div class="card-footer">
+            <div class="card-tags">
+              <span class="tag">Cybersecurity</span>
+              <span class="tag">Trends</span>
+            </div>
+            <a href="blogs/cybersecurity-trends.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -897,41 +1011,72 @@
     </div>
     <div class="cards">
       <div class="card">
+        <img src="img/ai-and-crypto-meta.jpg" alt="Crypto" class="card-image">
         <div class="card-content">
           <h3>Crypto Investment Strategies for 2025</h3>
-          <p>Cryptocurrency has come a long way, and in 2025, it's more mature, regulated, and accessible than ever. Learn strategic ways to grow your crypto portfolio.</p>
+          <p>Navigate the mature crypto market with strategies for diversification, staking, and risk management, tailored for global investors.</p>
           <div class="card-footer">
             <div class="card-tags">
               <span class="tag">Crypto</span>
               <span class="tag">Investing</span>
             </div>
-            <a href="tech & finance insights/crypto.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            <a href="blogs/crypto-strategies.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
       <div class="card">
+        <img src="img/pf front.jpg" alt="Personal Finance" class="card-image">
         <div class="card-content">
-          <h3>Personal Finance Essentials</h3>
-          <p>Personal finance is the foundation of financial freedom. Whether you're a student or young professional, mastering these essentials can set you up for life.</p>
+          <h3>Mastering Personal Finance in 2025</h3>
+          <p>Build wealth with budgeting, saving, and investing tips designed for young professionals and students worldwide.</p>
           <div class="card-footer">
             <div class="card-tags">
               <span class="tag">Budgeting</span>
               <span class="tag">Savings</span>
             </div>
-            <a href="tech & finance insights/Personal.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            <a href="blogs/personal-finance.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
       <div class="card">
+        <img src="img/stock.png" alt="Stock Market" class="card-image">
         <div class="card-content">
           <h3>Stock Market Analysis for Beginners</h3>
-          <p>The stock market may seem intimidating at first, but understanding how to analyze it can unlock powerful opportunities to grow your money.</p>
+          <p>Demystify the stock market with beginner-friendly techniques for analysis and portfolio building, relevant across global markets.</p>
           <div class="card-footer">
             <div class="card-tags">
               <span class="tag">Stocks</span>
               <span class="tag">Investing</span>
             </div>
-            <a href="tech & finance insights/stock.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            <a href="blogs/stock-analysis.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/retirement bg.jpg" alt="Retirement Planning" class="card-image">
+        <div class="card-content">
+          <h3>Retirement Planning in a Digital Age</h3>
+          <p>Plan for a secure future with strategies leveraging robo-advisors, digital wallets, and global investment opportunities.</p>
+          <div class="card-footer">
+            <div class="card-tags">
+              <span class="tag">Retirement</span>
+              <span class="tag">Planning</span>
+            </div>
+            <a href="blogs/retirement-planning.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/env save.png" alt="ESG Investing" class="card-image">
+        <div class="card-content">
+          <h3>ESG Investing: Opportunities in 2025</h3>
+          <p>Explore sustainable investing trends, focusing on environmental, social, and governance factors driving global markets.</p>
+          <div class="card-footer">
+            <div class="card-tags">
+              <span class="tag">ESG</span>
+              <span class="tag">Investing</span>
+            </div>
+            <a href="blogs/esg-investing.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -941,11 +1086,11 @@
   <section class="about-section" id="about">
     <div class="about-container">
       <div class="about-image">
-        <img src="tech & finance insights/back gorund.jpeg" alt="Tech & Finance Team">
+        <img src="img\about.png" alt="Tech & Finance Team">
       </div>
       <div class="about-content">
         <h2>About Us</h2>
-        <p>Tech & Finance Insights was founded with a simple mission: to demystify technology and financial concepts for everyday readers.</p>
+        <p>Tech & Finance Insights is dedicated to empowering a global audience with clear, actionable insights into technology and finance. Our mission is to bridge the gap between complex concepts and practical solutions.</p>
       </div>
     </div>
   </section>
@@ -955,56 +1100,47 @@
       <h2>Privacy Policy</h2>
       <div class="privacy-content">
         <h3>Information We Collect</h3>
-        <p>Tech & Finance Insights is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website or subscribe to our newsletter.</p>
-        <p>We collect the following types of information:</p>
+        <p>We are committed to protecting your privacy. This policy outlines how we collect, use, and safeguard your data when you visit our site or subscribe to our newsletter.</p>
         <ul>
-          <li>Personal information (such as email addresses) that you voluntarily provide when subscribing to our newsletter</li>
-          <li>Usage data including your IP address, browser type, pages visited, and time spent on our website</li>
-          <li>Cookie data to enhance your browsing experience and analyze website traffic</li>
+          <li>Email addresses provided voluntarily for newsletter subscriptions</li>
+          <li>Usage data (IP address, browser type, pages visited)</li>
+          <li>Cookies to enhance browsing and analyze traffic</li>
         </ul>
-        
         <h3>How We Use Your Information</h3>
-        <p>We use the information we collect to:</p>
+        <p>We use your data to:</p>
         <ul>
-          <li>Send you our newsletter and updates that you have requested</li>
-          <li>Improve our website content and user experience</li>
-          <li>Analyze website traffic and usage patterns</li>
-          <li>Protect against unauthorized access or potential security breaches</li>
+          <li>Deliver newsletters and updates</li>
+          <li>Enhance website content and user experience</li>
+          <li>Analyze traffic and usage patterns</li>
+          <li>Secure our platform</li>
         </ul>
-        
         <h3>Data Security</h3>
-        <p>We implement appropriate security measures to protect your personal information. However, no method of transmission over the Internet or electronic storage is 100% secure, so we cannot guarantee absolute security.</p>
-        
+        <p>We employ robust security measures, though no online transmission is 100% secure.</p>
         <h3>Third-Party Services</h3>
-        <p>We may use third-party services such as analytics providers and email marketing platforms. These services may collect information sent by your browser as part of their operations. They have their own privacy policies addressing how they use such information.</p>
-        
+        <p>We use analytics and email services that may collect browser data, governed by their privacy policies.</p>
         <h3>Your Rights</h3>
-        <p>You have the right to:</p>
         <ul>
-          <li>Access, correct, or delete your personal information</li>
-          <li>Withdraw your consent at any time by unsubscribing from our newsletter</li>
-          <li>Object to the processing of your personal data</li>
-          <li>Request restriction of processing of your personal data</li>
+          <li>Access, correct, or delete your data</li>
+          <li>Unsubscribe from newsletters</li>
+          <li>Object to or restrict data processing</li>
         </ul>
-        
         <h3>Changes to This Policy</h3>
-        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the effective date at the top.</p>
-        
+        <p>Updates will be posted here with a revised effective date.</p>
         <h3>Contact Us</h3>
-        <p>If you have any questions about this Privacy Policy, please contact us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0e7e7c67786f6d774e7a6b6d666f606a6867606f606d6b67607d6769667a7d206d6163">[email&#160;protected]</a>.</p>
+        <p>Reach us at <a href="mailto:thinulchathsidubop@gmail.com">thinulchathsidubop@gmail.com</a>.</p>
       </div>
     </div>
   </section>
 
   <section class="subscribe-section">
     <div class="subscribe-content">
-      <h2>Never Miss an Update</h2>
-      <p>Subscribe to our newsletter and get the latest tech and finance insights delivered directly to your inbox.</p>
+      <h2>Stay Informed</h2>
+      <p>Join our global community and receive the latest tech and finance insights directly in your inbox.</p>
       <form class="subscribe-form" id="subscribeForm">
         <input type="email" placeholder="Your email address" required id="emailInput">
         <button type="submit">Subscribe</button>
       </form>
-      <p class="success-message" id="successMessage">Thanks for subscribing! You'll receive our updates soon.</p>
+      <p class="success-message" id="successMessage">Thanks for subscribing! Expect updates soon.</p>
     </div>
   </section>
 
@@ -1014,7 +1150,8 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
   <script>
     // Mobile Menu Toggle
     document.getElementById('mobileMenuBtn').addEventListener('click', function() {
@@ -1029,44 +1166,36 @@
     document.getElementById('themeToggle').addEventListener('click', function() {
       document.body.classList.toggle('light-mode');
       const icon = this.querySelector('i');
-      if (document.body.classList.contains('light-mode')) {
-        icon.classList.replace('fa-moon', 'fa-sun');
-      } else {
-        icon.classList.replace('fa-sun', 'fa-moon');
-      }
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
     });
 
-    // Scroll-based header background change
+    // Scroll-based header background and back-to-top visibility
     window.addEventListener('scroll', function() {
       const header = document.querySelector('header');
+      const backToTop = document.getElementById('backToTop');
       if (window.scrollY > 50) {
         header.classList.add('scrolled');
+        backToTop.style.display = 'block';
       } else {
         header.classList.remove('scrolled');
+        backToTop.style.display = 'none';
       }
     });
 
-    // Database simulation for email subscriptions
+    // Subscription handling
     let subscriberDatabase = [];
-    
     document.getElementById('subscribeForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      
       const emailInput = document.getElementById('emailInput');
       const email = emailInput.value.trim();
-      
       if (email && isValidEmail(email)) {
         if (!subscriberDatabase.includes(email)) {
           subscriberDatabase.push(email);
           console.log('Subscriber database:', subscriberDatabase);
-          
           document.getElementById('successMessage').style.display = 'block';
-          
           emailInput.value = '';
-          
-          setTimeout(function() {
-            document.getElementById('successMessage').style.display = 'none';
-          }, 3000);
+          setTimeout(() => document.getElementById('successMessage').style.display = 'none', 3000);
         } else {
           alert('You are already subscribed!');
         }
@@ -1074,27 +1203,22 @@
         alert('Please enter a valid email address.');
       }
     });
-    
-    // Email validation function
+
     function isValidEmail(email) {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return emailRegex.test(email);
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
-    
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
-        
         if (targetElement) {
           window.scrollTo({
             top: targetElement.offsetTop - 80,
             behavior: 'smooth'
           });
-          
           document.getElementById('mainNav').classList.remove('active');
           const mobileMenuIcon = document.getElementById('mobileMenuBtn').querySelector('i');
           mobileMenuIcon.classList.replace('fa-times', 'fa-bars');
